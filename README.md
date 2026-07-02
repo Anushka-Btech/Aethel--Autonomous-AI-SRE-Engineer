@@ -1,6 +1,6 @@
-# Sentinel — Autonomous AI SRE Engineer
+# Aethel — Autonomous AI SRE Engineer
 
-Sentinel plays back a full production incident — deploy → memory leak → OOMKill → cascading
+Aethel plays back a full production incident — deploy → memory leak → OOMKill → cascading
 failure — and shows an autonomous AI engineer investigating it with 13 specialist agents,
 building a causal graph, simulating fixes against a digital twin, opening a PR, executing a
 rollback, and verifying recovery. Zero humans in the loop.
@@ -11,7 +11,7 @@ The original build was a beautiful piece of UI theater: every causal edge, every
 incident," every service dependency was a hardcoded array replayed against a stopwatch. It
 looked like reasoning, but there was no data structure underneath doing the reasoning.
 
-Sentinel now runs on **Neo4j**. The incident's causal chain, the service dependency topology,
+Aethel now runs on **Neo4j**. The incident's causal chain, the service dependency topology,
 the evidence trail, and the historical-incident memory are modeled as a real graph and queried
 live with Cypher:
 
@@ -95,7 +95,7 @@ try `MATCH (n) WHERE n.demo = true RETURN n LIMIT 100`.
 npm run dev
 ```
 
-If you skip step 2, Sentinel runs entirely in offline demo mode — every feature still works,
+If you skip step 2, Aethel runs entirely in offline demo mode — every feature still works,
 sourced from the static scenario. The "Graph Reasoning Engine" panel tells you which mode
 you're in.
 
@@ -105,7 +105,7 @@ you're in.
   narrative. The new ones are computed from a real query and the UI shows you the query.
 - **It's genuinely interactive, not just replayed.** Click *any* service on the map — not just
   the 3 the demo script anticipated — and get a real traversal result.
-- **It degrades gracefully.** No live DB in the room? Sentinel doesn't crash or stub out —
+- **It degrades gracefully.** No live DB in the room? Aethel doesn't crash or stub out —
   it flips to a clearly-labeled offline mode with identical UX. That's a production-grade
   design decision, not just a demo hack.
 - **The graph model is the right tool for the job.** Causal chains, blast-radius propagation,
