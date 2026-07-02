@@ -36,13 +36,13 @@ import { useCallback, useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sentinel — Autonomous AI SRE Engineer" },
+      { title: "Aethel — Autonomous AI SRE Engineer" },
       {
         name: "description",
         content:
-          "Sentinel is an autonomous AI Site Reliability Engineer. It investigates, simulates fixes, predicts impact, opens PRs, executes rollback and verifies recovery — end-to-end, with zero human in the loop.",
+          "Aethel is an autonomous AI Site Reliability Engineer. It investigates, simulates fixes, predicts impact, opens PRs, executes rollback and verifies recovery — end-to-end, with zero human in the loop.",
       },
-      { property: "og:title", content: "Sentinel — Autonomous AI SRE Engineer" },
+      { property: "og:title", content: "Aethel — Autonomous AI SRE Engineer" },
       {
         property: "og:description",
         content:
@@ -294,7 +294,7 @@ function Dashboard() {
 
         <footer className="mt-8 flex flex-wrap items-center justify-between gap-2 text-[11px] mono opacity-60">
           <div>
-            Sentinel v1.0 · autonomous engineer · multi-agent reasoning · digital twin · auto-PR ·
+            Aethel v1.0 · autonomous engineer · multi-agent reasoning · digital twin · auto-PR ·
             auto-rollback · verified recovery
           </div>
           <div>built with TanStack Start · Gemini AI Gateway · gemini-3-flash</div>
@@ -443,7 +443,7 @@ function Logo() {
         </svg>
       </div>
       <div className="leading-tight">
-        <div className="text-sm font-bold">Sentinel</div>
+        <div className="text-sm font-bold">Aethel</div>
         <div className="mono text-[9px] uppercase tracking-[0.18em] opacity-60">
           autonomous ai · sre engineer
         </div>
@@ -485,9 +485,9 @@ function IncidentHero({
           </h1>
           <p className="mt-1 max-w-2xl text-sm opacity-80">
             {phase === "idle" &&
-              "Click Deploy Broken Version to ship a buggy commit to prod. Sentinel will autonomously: investigate with 13 agents → simulate 3 fixes against a digital twin → predict impact → select the safest plan → open a GitHub PR → generate a rollback plan → execute it → verify production recovery → close the incident and draft the postmortem. Zero humans in the loop."}
+              "Click Deploy Broken Version to ship a buggy commit to prod. Aethel will autonomously: investigate with 13 agents → simulate 3 fixes against a digital twin → predict impact → select the safest plan → open a GitHub PR → generate a rollback plan → execute it → verify production recovery → close the incident and draft the postmortem. Zero humans in the loop."}
             {phase !== "idle" &&
-              "Sentinel is acting as a staff-level SRE engineer. Every step below is being performed autonomously — investigation, simulation, prediction, PR authoring, rollback execution and recovery verification."}
+              "Aethel is acting as a staff-level SRE engineer. Every step below is being performed autonomously — investigation, simulation, prediction, PR authoring, rollback execution and recovery verification."}
           </p>
         </div>
         <AnimatePresence>

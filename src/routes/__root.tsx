@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sentinel — Autonomous AI SRE" },
+      { title: "Aethel — Autonomous AI SRE" },
       {
         name: "description",
         content:
-          "Sentinel investigates production incidents like a senior SRE — autonomously reasoning over logs, metrics, traces, deployments and Kubernetes events.",
+          "Aethel investigates production incidents like a senior SRE — autonomously reasoning over logs, metrics, traces, deployments and Kubernetes events.",
       },
-      { name: "author", content: "Sentinel AI" },
-      { property: "og:title", content: "Sentinel — Autonomous AI SRE" },
+      { name: "author", content: "Aethel AI" },
+      { property: "og:title", content: "Aethel — Autonomous AI SRE" },
       {
         property: "og:description",
         content:

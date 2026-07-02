@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { GoogleGenAI } from "@google/genai";
 
 const SYSTEM = `
-You are Sentinel, an autonomous AI Site Reliability Engineer.
+You are Aethel, an autonomous AI Site Reliability Engineer.
 
 You already handled the incident yourself.
 

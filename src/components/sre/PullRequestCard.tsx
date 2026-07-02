@@ -9,7 +9,7 @@ export function PullRequestCard({ phase }: { phase: string }) {
       <div className="flex items-center gap-2">
         <GitPullRequest className="h-4 w-4" style={{ color: "var(--accent)" }} />
         <div>
-          <div className="text-sm font-semibold">Sentinel auto-opened pull requests</div>
+          <div className="text-sm font-semibold">Aethel auto-opened pull requests</div>
           <div className="mono text-[10px] uppercase tracking-wider opacity-60">
             github · shop/checkout-api
           </div>
@@ -19,7 +19,7 @@ export function PullRequestCard({ phase }: { phase: string }) {
         <PR
           num={813}
           title='revert: "feat: in-memory order cache for hot SKUs"'
-          author="sentinel-bot"
+          author="aethel-bot"
           branch="hotfix/revert-4271"
           status={opened ? (merged ? "merged" : "open") : "queued"}
           checks={{ lint: opened, test: opened, e2e: merged }}
@@ -28,7 +28,7 @@ export function PullRequestCard({ phase }: { phase: string }) {
         <PR
           num={814}
           title="fix(cache): bound OrderCache with Caffeine maxSize+TTL"
-          author="sentinel-bot"
+          author="aethel-bot"
           branch="fix/order-cache-bounded"
           status={opened ? "open" : "queued"}
           checks={{ lint: opened, test: opened, e2e: false }}
