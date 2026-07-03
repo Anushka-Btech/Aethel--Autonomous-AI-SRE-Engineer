@@ -72,7 +72,9 @@ Aethel reduces investigation time from minutes to seconds while providing explai
 - AI Integration
 - Neo4j Graph Design
 - System Architecture
+
 **Anushka Chhoker**
+
 **Abhinav Sarda**
 
 ---
