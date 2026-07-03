@@ -92,7 +92,7 @@ export function ChatPanel() {
       <div className="flex items-center gap-2 border-b border-border px-3 py-2">
         <Sparkles className="h-4 w-4" />
         <div className="text-sm font-semibold">
-          Ask Sentinel
+          Ask Aethel
         </div>
 
         <div className="mono ml-auto text-[10px] opacity-60">
@@ -105,7 +105,7 @@ export function ChatPanel() {
         {messages.length === 0 && (
           <>
             <p className="text-xs opacity-70">
-              Sentinel has the complete incident context.
+              Aethel has the complete incident context.
             </p>
 
             <div className="flex flex-wrap gap-2">
@@ -166,7 +166,7 @@ export function ChatPanel() {
           className="flex-1 rounded-md border border-border bg-muted/40 px-3 py-2"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask Sentinel..."
+          placeholder="Ask Aethel..."
         />
 
         <button

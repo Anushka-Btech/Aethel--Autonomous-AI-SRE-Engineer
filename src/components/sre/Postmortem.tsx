@@ -124,7 +124,7 @@ export function Postmortem() {
           <div dangerouslySetInnerHTML={{ __html: renderMarkdown(md) }} />
         ) : (
           <p className="text-xs opacity-60">
-            Sentinel will synthesize a blameless postmortem from the investigation graph. Click{" "}
+            Aethel will synthesize a blameless postmortem from the investigation graph. Click{" "}
             <span className="mono">Generate</span> to draft the document.
           </p>
         )}

@@ -29,7 +29,7 @@ export function CodeReview() {
             onClick={() => setView("fix")}
             className={`mono rounded px-2 py-0.5 text-[10px] ${view === "fix" ? "bg-primary text-primary-foreground" : "opacity-70"}`}
           >
-            sentinel fix
+            Aethel fix
           </button>
         </div>
       </div>

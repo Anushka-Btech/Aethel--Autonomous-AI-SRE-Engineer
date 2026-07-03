@@ -18,7 +18,7 @@ export function AutonomousPipeline({ steps }: { steps: Step[] }) {
           <div className="mono text-[10px] uppercase tracking-[0.18em] opacity-70">
             autonomous sre pipeline
           </div>
-          <h2 className="text-sm font-semibold">Sentinel is executing recovery end-to-end</h2>
+          <h2 className="text-sm font-semibold">Aethel is executing recovery end-to-end</h2>
         </div>
         <div className="mono text-[10px] opacity-60">
           {steps.filter((s) => s.status === "done").length}/{steps.length} steps complete

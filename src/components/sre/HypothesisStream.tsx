@@ -11,7 +11,7 @@ export function HypothesisStream({ trail, confidence }: { trail: Step[]; confide
       <div className="flex items-center gap-2">
         <Brain className="h-4 w-4" style={{ color: "var(--accent)" }} />
         <div>
-          <div className="text-sm font-semibold">Sentinel is thinking</div>
+          <div className="text-sm font-semibold">Aethel is thinking</div>
           <div className="mono text-[10px] uppercase tracking-wider opacity-60">
             hypothesis confidence · live
           </div>

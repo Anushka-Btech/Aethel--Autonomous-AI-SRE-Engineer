@@ -9,7 +9,7 @@ export function EvidenceBreakdown({ overall }: { overall: number }) {
         <div>
           <div className="text-sm font-semibold">Evidence Breakdown</div>
           <div className="mono text-[10px] uppercase tracking-wider opacity-60">
-            confidence per source · why sentinel is sure
+            confidence per source · why aethel is sure
           </div>
         </div>
         <div className="text-right">

@@ -1,210 +1,265 @@
-<div align="center">
+# 🚀 Aethel — Autonomous AI SRE Engineer
 
-# 🛡️ Aethel
-
-### Autonomous AI SRE Engineer
-
-**Detect • Investigate • Reason • Recover • Learn**
-
-An autonomous AI Site Reliability Engineer that detects production incidents, analyzes their root causes using a Neo4j Knowledge Graph, generates recovery strategies with Gemini AI, and produces production-grade postmortems.
-
-Built for modern cloud-native infrastructure.
+> **An autonomous Site Reliability Engineer that investigates incidents, reasons over a Neo4j knowledge graph, executes recovery plans, generates postmortems, and explains every decision using Gemini AI.**
 
 ---
 
-![React](https://img.shields.io/badge/React-19-blue?logo=react)
-![TanStack](https://img.shields.io/badge/TanStack-Start-orange)
-![Neo4j](https://img.shields.io/badge/Neo4j-AuraDB-008CC1?logo=neo4j)
-![Gemini](https://img.shields.io/badge/Google-Gemini_AI-4285F4?logo=google)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
-![License](https://img.shields.io/badge/License-MIT-green)
+# 📌 Problem & Domain
 
-</div>
+Modern production incidents cost organizations millions of dollars every minute.
 
----
+Today, SREs spend valuable time:
+- Investigating logs
+- Correlating telemetry
+- Understanding service dependencies
+- Comparing historical incidents
+- Deciding rollback strategies
+- Writing postmortems
 
-# 🚀 Overview
+Incident response is still largely manual.
 
-**Aethel** is an **Autonomous AI Site Reliability Engineer** designed to assist DevOps and SRE teams during production incidents.
+## Themes Selected
 
-Instead of acting like a chatbot, Aethel behaves like an experienced on-call engineer.
-
-It continuously reasons over infrastructure knowledge stored in **Neo4j AuraDB**, analyzes incidents using **Google Gemini**, and presents actionable insights including:
-
-- Root Cause Analysis
-- Service Dependency Graphs
-- Historical Incident Similarity
-- AI Incident Investigation
-- Autonomous Recovery Planning
-- Blameless Postmortem Generation
+- ✅ Developer Tools & Software Infrastructure
+- ✅ Infrastructure, Mobility & Smart Systems
+- ✅ Trust, Identity & Security
+- ✅ AI & Autonomous Systems
 
 ---
 
-# ✨ Features
+# 🎯 Objective
 
-## 🧠 AI Incident Investigation
+Aethel is an **Autonomous AI Site Reliability Engineer** designed to reduce Mean Time To Resolution (MTTR) during production outages.
 
-- Ask natural language questions
-- AI explains failures
-- Uses Google Gemini 2.5 Flash
+Instead of merely recommending actions, Aethel autonomously:
 
----
+- detects incidents
+- analyzes telemetry
+- traverses a live Neo4j knowledge graph
+- identifies root causes
+- compares historical failures
+- selects the safest recovery plan
+- generates a production-grade postmortem
+- explains every decision using Gemini AI
 
-## 🌐 Neo4j Knowledge Graph
+### Target Users
 
-Models production infrastructure as a graph.
+- DevOps Engineers
+- Site Reliability Engineers
+- Platform Teams
+- Cloud Infrastructure Teams
 
-Includes
+### Pain Point
 
-- Services
-- Incidents
-- Deployments
-- Evidence
-- Dependencies
-- Historical failures
+Production incidents require engineers to manually correlate logs, metrics, deployments and infrastructure before making high-risk decisions.
 
----
+### Value
 
-## 🔍 Similar Incident Search
-
-Searches historical incidents stored inside Neo4j to identify recurring failures and suggest previously successful recovery strategies.
-
----
-
-## 🌳 Causal Graph
-
-Visualizes
-
-```
-Deployment
-      ↓
-Memory Leak
-      ↓
-OOMKilled
-      ↓
-Database Exhaustion
-      ↓
-Retry Storm
-      ↓
-Customer Impact
-```
+Aethel reduces investigation time from minutes to seconds while providing explainable, evidence-backed autonomous incident response.
 
 ---
 
-## 📊 Service Dependency Map
+# 🧠 Team & Approach
 
-Interactive service topology showing relationships between
+## Team Name
 
-- Checkout API
-- Cart Service
-- Payment Gateway
-- PostgreSQL
-- Kubernetes
+**The Error DeCoders**
 
----
+## Team Members
 
-## 📄 Autonomous Postmortem
-
-Automatically generates production-grade postmortems including
-
-- Timeline
-- Root Cause
-- Customer Impact
-- Recovery Actions
-- Lessons Learned
-- Preventive Measures
+**Anushka Tripathi**
+- Full Stack Developer
+- AI Integration
+- Neo4j Graph Design
+- System Architecture
+**Anushka Chhoker**
+**Abhinav Sarda**
 
 ---
 
-## 🤖 Ask Aethel
+## Our Approach
 
-Chat with the autonomous SRE.
+Instead of building another chatbot, we built an **AI engineer**.
 
-Example questions
+Most incident tools display dashboards.
 
-- Why did checkout fail?
-- What caused the retry storm?
-- Which deployment introduced the bug?
-- Show evidence for the root cause.
-- Was Stripe actually down?
+Aethel understands relationships.
 
----
+Every incident is represented as a connected knowledge graph inside Neo4j AuraDB.
 
-# 🏗 Architecture
+The AI reasons over:
 
-```
-                    User
-                     │
-                     ▼
-              React Dashboard
-                     │
-                     ▼
-          TanStack Start API Routes
-          ┌───────────────┬──────────────┐
-          │               │              │
-          ▼               ▼              ▼
-     Gemini AI      Neo4j AuraDB    Incident Engine
-          │               │
-          └───────Knowledge Graph──────┘
-                     │
-                     ▼
-          AI Grounded Responses
-```
+- deployments
+- services
+- evidence
+- historical incidents
+- dependencies
+- recovery plans
+
+before answering.
+
+This makes every response explainable instead of hallucinated.
 
 ---
 
-# 🛠 Tech Stack
+# 🛠️ Tech Stack
 
 ## Frontend
 
 - React 19
 - TanStack Start
 - TypeScript
-- Tailwind CSS
+- TailwindCSS
 - Framer Motion
-
----
 
 ## Backend
 
 - TanStack Server Functions
-- Node.js
-
----
-
-## AI
-
-- Google Gemini 2.5 Flash
 - AI SDK
-
----
+- Google Gemini 2.5 Flash
 
 ## Database
 
+- **Neo4j AuraDB (Primary Database)**
+
+## APIs
+
+- Google Gemini API
+- Neo4j Driver
+
+## Hosting
+
+- Vercel
+
+---
+
+# 🏆 Sponsored Track
+
+## ✅ Neo4j Track – AuraDB
+
+AuraDB is **the primary database** powering Aethel.
+
+It is **not used as storage**.
+
+The application reasons over graph relationships in real time.
+
+Neo4j stores:
+
+- Incidents
+- Services
+- Root Causes
+- Evidence
+- Metrics
+- Recovery Plans
+- Historical Incidents
+- Dependencies
+
+Example live queries:
+
+- Root cause traversal
+- Service dependency mapping
+- Similar incident search
+- Evidence correlation
+- Failure chain visualization
+
+Every graph shown in the application is queried live from AuraDB using Cypher.
+
+---
+
+# ✨ Key Features
+
+## 🤖 Autonomous AI SRE
+
+Investigates production incidents using Gemini.
+
+---
+
+## 🌐 Live Neo4j Knowledge Graph
+
+Traverses real graph relationships between services, deployments, failures and evidence.
+
+---
+
+## 📊 Service Dependency Graph
+
+Visualizes blast radius across production systems.
+
+---
+
+## 🔍 Similar Incident Search
+
+Uses graph traversal to retrieve previous production incidents with similarity scoring.
+
+---
+
+## 📝 AI Generated Postmortem
+
+Automatically produces production-grade postmortems in Markdown.
+
+---
+
+## 📈 Root Cause Analysis
+
+Combines telemetry, logs and graph relationships to identify failures.
+
+---
+
+## 💬 Ask Aethel
+
+Interactive AI chat with full production incident context.
+
+---
+
+## ⚡ Digital Twin Recovery Simulation
+
+Evaluates multiple recovery plans before selecting the safest option.
+
+---
+
+# 📽️ Demo & Deliverables
+
+## Live Demo
+
+https://aethel-ai.vercel.app
+
+## GitHub
+
+https://github.com/Anushka-Btech/Aethel--Autonomous-AI-SRE-Engineer
+
+## Demo Video
+
+(Attach YouTube Link)
+
+---
+
+# ✅ Tasks & Bonus Checklist
+
+- ✅ All mandatory social tasks completed
+- ✅ Neo4j Sponsored Track
+- ⬜ Blog (Optional)
+- ⬜ Badge Sharing (Optional)
+
+---
+
+# 🧪 How to Run
+
+## Requirements
+
+- Node.js 20+
+- npm
 - Neo4j AuraDB
-- Cypher
+- Google Gemini API Key
 
 ---
 
-## Infrastructure
-
-- Docker
-- Neo4j
-- Prometheus
-- Grafana
-- Loki
-- Jaeger
-
----
-
-# ⚡ Getting Started
-
-Clone the repository
+## Clone
 
 ```bash
-git clone https://github.com/Anushka-Btech/Aethel--Autonomous-AI-SRE-Engineer.git
+git clone https://github.com/Anushka-Btech/Aethel--Autonomous-AI-SRE-Engineer
+```
 
-cd aethel-sre
+```bash
+cd Aethel--Autonomous-AI-SRE-Engineer
 ```
 
 Install dependencies
@@ -213,30 +268,24 @@ Install dependencies
 npm install
 ```
 
----
-
-Create a `.env`
+Create a `.env` file
 
 ```env
-GEMINI_API_KEY=YOUR_GEMINI_KEY
+GEMINI_API_KEY=your_key
 
-NEO4J_URI=neo4j+s://YOUR_INSTANCE.databases.neo4j.io
-NEO4J_USERNAME=neo4j
-NEO4J_PASSWORD=YOUR_PASSWORD
-NEO4J_DATABASE=neo4j
+NEO4J_URI=neo4j+s://xxxx.databases.neo4j.io
+NEO4J_USERNAME=xxxx
+NEO4J_PASSWORD=xxxx
+NEO4J_DATABASE=xxxx
 ```
 
----
-
-Seed the Knowledge Graph
+Seed AuraDB
 
 ```bash
 npm run db:seed
 ```
 
----
-
-Run locally
+Run
 
 ```bash
 npm run dev
@@ -250,75 +299,43 @@ http://localhost:8080
 
 ---
 
-# 🧩 Knowledge Graph Schema
+# 🧬 Future Scope
 
-The graph contains
-
-- Incident
-- Service
-- Deployment
-- Evidence
-- Engineer
-- Pull Request
-- Root Cause
-- Recovery Plan
-
-Relationships include
-
-- CAUSED_BY
-- DEPENDS_ON
-- AFFECTS
-- SIMILAR_TO
-- FIXED_BY
-- OBSERVED_IN
+- Multi-incident autonomous reasoning
+- Kubernetes live cluster integration
+- GitHub Actions remediation
+- PagerDuty integration
+- Slack integration
+- OpenTelemetry ingestion
+- Live Prometheus metrics
+- Multi-cloud deployment support
+- Autonomous canary analysis
+- Reinforcement learning for recovery planning
 
 ---
 
-# 💡 Example Workflow
+# 📎 Resources & Credits
 
-1. Production deployment occurs
-2. Memory leak detected
-3. Neo4j identifies affected services
-4. Gemini analyzes graph context
-5. Aethel generates recovery plan
-6. Operator reviews recommendations
-7. Postmortem automatically generated
-
----
-
-# 🎯 Why Neo4j?
-
-Production incidents are naturally graphs.
-
-Traditional databases struggle to represent
-
-- Service dependencies
-- Cascading failures
-- Historical relationships
-- Incident similarity
-
-Neo4j enables fast traversal across interconnected systems, making root cause analysis significantly more intuitive.
+- Google Gemini API
+- Neo4j AuraDB
+- AI SDK
+- React
+- TanStack Start
+- TailwindCSS
+- Framer Motion
 
 ---
 
-# 🌟 Future Work
+# 🏁 Final Words
 
-- GitHub PR Automation
-- Kubernetes Rollback Execution
-- Slack Integration
-- PagerDuty Integration
-- GraphRAG
-- Multi-cluster Support
-- AI Runbooks
+Aethel began with a simple question:
 
----
+> **What if an AI could act as the on-call Site Reliability Engineer instead of simply assisting one?**
 
-# 👨‍💻 Author
+During HackHazards '26 we transformed that idea into a working autonomous incident response platform.
 
-**Anushka Chhoker**
+Rather than building another chatbot, we built a system capable of understanding relationships through graphs, reasoning over production incidents, and explaining every action with evidence.
 
----
+This project reflects our vision of the future of Site Reliability Engineering—where AI collaborates with humans by handling repetitive operational work while keeping every decision transparent and explainable.
 
-# 📜 License
-
-MIT License
+Thank you for reviewing Aethel.
