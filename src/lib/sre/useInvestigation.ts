@@ -51,7 +51,7 @@ export function useInvestigation(sourced?: { nodes: GraphNode[]; edges: GraphEdg
         raf.current = requestAnimationFrame(tick);
         return;
       }
-    } else if (phase === "verifying" && now >= 1.8) {
+    } else if (phase === "verifying" && now >= 2.2) {
       setPhase("closed");
       return;
     }
@@ -170,33 +170,59 @@ export function useInvestigation(sourced?: { nodes: GraphNode[]; edges: GraphEdg
   /* ----- autonomous pipeline state ----- */
   const pipelineSteps = useMemo(() => {
     return PIPELINE.map((step) => {
+      const postT = t;
+
       // when mitigated, fast-forward planning steps to done so the UI
       // doesn't gate on tForViz (the user clicked rollback early).
       const effectiveT = mitigated
         ? Math.max(tForViz, step.startAt + step.duration + 0.1)
         : tForViz;
+
       let status: "pending" | "active" | "done" =
         effectiveT < step.startAt
           ? "pending"
           : effectiveT < step.startAt + step.duration
             ? "active"
             : "done";
+
       // verify + close progress with post-mitigation sim time
       if (mitigated && (step.id === "verify" || step.id === "close")) {
-        const postT = t; // resets to 0 after mitigation
-        if (step.id === "verify") status = postT < 1.4 ? "active" : "done";
-        if (step.id === "close")
-          status = phase === "closed" ? "done" : postT < 1.6 ? "pending" : "active";
+        if (step.id === "verify") {
+          status = postT >= 1.4 ? "done" : "active";
+        }
+
+        if (step.id === "close") {
+          if (postT >= 1.8) {
+            status = "done";
+          } else if (postT >= 1.4) {
+            status = "active";
+          } else {
+            status = "pending";
+          }
+        }
       }
-      const progress =
-        status === "done"
-          ? 1
-          : status === "active"
-            ? Math.min(1, Math.max(0, (effectiveT - step.startAt) / step.duration))
-            : 0;
-      return { ...step, status, progress };
+
+      let progress = 0;
+
+      if (status === "done") {
+        progress = 1;
+      } else if (status === "active") {
+        if (mitigated && step.id === "verify") {
+          progress = Math.min(postT / 1.4, 1);
+        } else if (mitigated && step.id === "close") {
+          progress = Math.min(Math.max((postT - 1.4) / 0.4, 0), 1);
+        } else {
+          progress = Math.min(1, Math.max(0, (effectiveT - step.startAt) / step.duration));
+        }
+      }
+
+      return {
+        ...step,
+        status,
+        progress,
+      };
     });
-  }, [tForViz, t, mitigated, phase]);
+  }, [tForViz, t, mitigated]);
 
   const impact = useMemo(() => executiveImpact(tForViz, mitigated), [tForViz, mitigated]);
   const prediction = useMemo(() => predictiveOOM(tForViz, mitigated), [tForViz, mitigated]);
