@@ -248,8 +248,8 @@ https://github.com/Anushka-Btech/Aethel--Autonomous-AI-SRE-Engineer
 
 - ✅ All mandatory social tasks completed
 - ✅ Neo4j Sponsored Track
-- ⬜ Blog (Optional)
-- ⬜ Badge Sharing (Optional)
+- ✅ Blog (Optional)
+- ✅ Badge Sharing (Optional)
 
 ---
 
