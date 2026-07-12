@@ -84,8 +84,8 @@ ARCHITECTURE]
 **Abhinav Sarda**
 [BACKEND ENGINEERING · AI INTEGRATION]
 
-- Linkedin- 
-- Github- 
+- Linkedin- https://www.linkedin.com/in/abhinav-sarda-997251381/
+- Github- https://github.com/abhinavsarda11-create
 
 ---
 
@@ -240,7 +240,7 @@ https://github.com/Anushka-Btech/Aethel--Autonomous-AI-SRE-Engineer
 
 ## Demo Video
 
-(Attach YouTube Link)
+https://drive.google.com/file/d/1G12Hqvt4mDCDB3KWay1yjSdfZEfokV3k/view?usp=sharing
 
 ---
 
