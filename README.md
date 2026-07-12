@@ -69,19 +69,23 @@ Aethel reduces investigation time from minutes to seconds while providing explai
 ## Team Members
 
 **Anushka Tripathi**
-FULL STACK · AI INTEGRATION · NEO4J · SYSTEM
-ARCHITECTURE
+[FULL STACK · AI INTEGRATION · NEO4J · SYSTEM
+ARCHITECTURE]
 
-- Full Stack Developer
-- AI Integration
-- Neo4j Graph Design
-- System Architecture
+- Linkedin- https://www.linkedin.com/in/anushka-tripathi-2a6669380/
+- Github- https://github.com/Anushka-Tripathi
 
 **Anushka Chhoker**
-DEVELOPER · UX DESIGN
+[DEVELOPER · UX DESIGN]
+
+- Linkedin- https://www.linkedin.com/in/anushka-c1602b5387hhoker-/
+- Github- https://github.com/Anushka-Btech
 
 **Abhinav Sarda**
-BACKEND ENGINEERING · AI INTEGRATION
+[BACKEND ENGINEERING · AI INTEGRATION]
+
+- Linkedin- 
+- Github- 
 
 ---
 
@@ -228,7 +232,7 @@ Evaluates multiple recovery plans before selecting the safest option.
 
 ## Live Demo
 
-https://aethel-ai.vercel.app
+https://aethel-sre.vercel.app/
 
 ## GitHub
 
