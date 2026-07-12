@@ -9,6 +9,7 @@
 Modern production incidents cost organizations millions of dollars every minute.
 
 Today, SREs spend valuable time:
+
 - Investigating logs
 - Correlating telemetry
 - Understanding service dependencies
@@ -68,14 +69,19 @@ Aethel reduces investigation time from minutes to seconds while providing explai
 ## Team Members
 
 **Anushka Tripathi**
+FULL STACK · AI INTEGRATION · NEO4J · SYSTEM
+ARCHITECTURE
+
 - Full Stack Developer
 - AI Integration
 - Neo4j Graph Design
 - System Architecture
 
 **Anushka Chhoker**
+DEVELOPER · UX DESIGN
 
 **Abhinav Sarda**
+BACKEND ENGINEERING · AI INTEGRATION
 
 ---
 

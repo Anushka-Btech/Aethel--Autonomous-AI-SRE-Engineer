@@ -1,7 +1,7 @@
 import neo4j, { type Driver, type Session } from "neo4j-driver";
 
 /**
- * Sentinel's knowledge graph lives in Neo4j.
+ * Aethel's knowledge graph lives in Neo4j.
  *
  * Everything that used to be a hardcoded array in `scenario.ts` — the causal
  * chain, the service topology, historical incidents, evidence sources — is
