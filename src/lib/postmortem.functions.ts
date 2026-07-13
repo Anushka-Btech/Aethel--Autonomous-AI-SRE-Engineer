@@ -14,87 +14,219 @@ export const generatePostmortem = createServerFn({
     apiKey: key,
   });
 
+  /* ------------------------------------------------------------------
+     Dynamic Incident Metadata
+     ------------------------------------------------------------------ */
+
+  const incidentId = "INC-4271";
+
+  // Current UTC time becomes the incident start time
+  const startedAt = new Date();
+
+  // Timeline offsets
+  const detectedAt = new Date(startedAt.getTime() + 9 * 60 * 1000);
+  const mitigatedAt = new Date(startedAt.getTime() + 21 * 60 * 1000);
+  const resolvedAt = new Date(startedAt.getTime() + 22 * 60 * 1000);
+
+  const formatDate = (d: Date) => d.toISOString().split("T")[0];
+
+  const formatTime = (d: Date) =>
+    d.toISOString().split("T")[1].substring(0, 5);
+
+  const incidentDate = formatDate(startedAt);
+
   const response = await ai.models.generateContent({
     model: "gemini-2.5-flash",
+
     contents: `
-SYSTEM:
+SYSTEM
 
-You are Sentinel, an AUTONOMOUS AI SRE ENGINEER who personally ran this incident end-to-end.
+You are Sentinel, an AUTONOMOUS AI SRE ENGINEER.
 
-Write the official, production-grade, blameless postmortem in markdown.
+You personally investigated this incident, selected the safest recovery plan,
+executed remediation, verified production recovery, and closed the incident.
 
-First person where appropriate ("I executed the rollback at 14:23Z").
+Generate a production-grade blameless postmortem in markdown.
 
-Technically rigorous, specific, no filler.
+Be technically rigorous.
 
-USER:
+Do not use marketing language.
 
-Write the official postmortem for incident INC-4271.
+Write naturally like a senior Site Reliability Engineer.
 
-You (Sentinel) ran this incident autonomously — investigated, simulated 3 fixes, opened PRs, executed the rollback, verified recovery, and closed it.
+--------------------------------------------------------------------
 
-Facts to use (do not invent beyond these):
+INCIDENT METADATA
 
-- Service: checkout-api (prod-1, us-east-1)
-- Trigger: Deployment #4271 (commit a91f3b2 by m.alvarez) at 14:02:11Z introducing an unbounded in-memory LRU cache.
-- Failure chain:
-memory leak → OOMKilled on 6/8 pods →
-postgres connection pool exhaustion →
-cart-service retry storm (×3.4) →
-payments-gateway 429.
+Incident ID:
+${incidentId}
 
-- Duration:
-14:02 → 14:24 UTC (22 minutes)
+Incident Date:
+${incidentDate}
 
-- Detected:
-14:11 UTC
+Started:
+${incidentDate} ${formatTime(startedAt)} UTC
 
-- Mitigated:
-14:23 UTC
+Detected:
+${incidentDate} ${formatTime(detectedAt)} UTC
 
-- Customer impact:
-3,142 sessions
-~$18,400/min revenue at risk
-checkout error rate peaked at 8.7%
+Mitigated:
+${incidentDate} ${formatTime(mitigatedAt)} UTC
 
-- Confidence:
+Resolved:
+${incidentDate} ${formatTime(resolvedAt)} UTC
+
+Duration:
+22 minutes
+
+Environment:
+Production
+
+Region:
+us-east-1
+
+Severity:
+SEV-1
+
+Confidence:
 0.92
 
-Autonomous actions:
+--------------------------------------------------------------------
 
-- simulated 3 fix plans against the digital twin
-- opened PR #813 (auto-revert)
-- opened PR #814 (bounded cache fix)
-- executed kubectl rollout undo
-- verified SLO for 60 seconds
-- closed the PagerDuty incident
+INCIDENT DETAILS
 
-Similar prior incident:
+Service:
+checkout-api
 
-INC-3908 (92% similarity)
+Deployment:
+#4271
 
-Write the report with these sections:
+Commit:
+a91f3b2
 
-## Executive Summary
-## Timeline (UTC)
-## Root Cause
-## Contributing Factors
-## Customer Impact
-## Detection & Autonomous Response
-## Fix Plans Considered
-## Lessons Learned
-## Action Items
-## Preventive Measures
+Author:
+m.alvarez
 
-For "Fix Plans Considered", include a markdown table with:
+Root Cause:
+
+Deployment #4271 introduced an unbounded in-memory LRU cache which caused
+continuous memory growth.
+
+Failure Chain
+
+Memory leak
+
+↓
+
+OOMKilled on 6 of 8 checkout pods
+
+↓
+
+PostgreSQL connection pool exhaustion
+
+↓
+
+cart-service retry storm (3.4×)
+
+↓
+
+payments-gateway returned HTTP 429
+
+--------------------------------------------------------------------
+
+CUSTOMER IMPACT
+
+Affected sessions:
+3,142
+
+Peak checkout error rate:
+8.7%
+
+Revenue at risk:
+~$18,400 per minute
+
+--------------------------------------------------------------------
+
+AUTONOMOUS ACTIONS PERFORMED
+
+✓ Correlated logs, metrics, traces and Kubernetes events
+
+✓ Constructed the service dependency graph using Neo4j
+
+✓ Retrieved similar historical incident (INC-3908, 92% similarity)
+
+✓ Simulated three remediation plans using the Digital Twin
+
+✓ Opened PR #813 (automatic rollback)
+
+✓ Opened PR #814 (bounded cache implementation)
+
+✓ Executed:
+
+kubectl rollout undo deployment/checkout-api
+
+✓ Verified SLO compliance for 60 seconds
+
+✓ Closed PagerDuty incident automatically
+
+--------------------------------------------------------------------
+
+SIMILAR INCIDENT
+
+INC-3908
+
+Similarity:
+92%
+
+--------------------------------------------------------------------
+
+Generate the report using these exact sections.
+
+# Executive Summary
+
+# Timeline (UTC)
+
+# Root Cause
+
+# Contributing Factors
+
+# Customer Impact
+
+# Detection & Autonomous Response
+
+# Fix Plans Considered
+
+Include a markdown table:
 
 | Plan | Command | Success Probability | Downtime | Exposure |
 
-For "Action Items", include a markdown table with:
+# Lessons Learned
+
+# Action Items
+
+Include a markdown table:
 
 | Owner | Action | Priority | Due |
 
-Keep everything under 800 words.
+# Preventive Measures
+
+--------------------------------------------------------------------
+
+CRITICAL INSTRUCTIONS
+
+1. NEVER invent a different incident date.
+
+2. NEVER write "On 2024-05-15".
+
+3. NEVER replace the provided timestamps.
+
+4. Every timestamp in the Executive Summary and Timeline MUST exactly match the Incident Metadata above.
+
+5. Use first person when describing autonomous actions.
+
+6. Produce professional GitHub-flavored Markdown.
+
+7. Keep the report under 800 words.
 `,
   });
 
